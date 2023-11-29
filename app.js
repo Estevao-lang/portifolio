@@ -23,3 +23,28 @@ function showSlides() {
   dots[slideIndex - 1].className += " active";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
+document.addEventListener("DOMContentLoaded", function () {
+  var paragraphs = document.querySelectorAll(".fade-in-text");
+
+  function handleScroll() {
+    paragraphs.forEach(function (paragraph) {
+      if (isInViewport(paragraph) && !paragraph.classList.contains("visible")) {
+        paragraph.classList.add("visible");
+      }
+    });
+  }
+
+  function isInViewport(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) / 2
+    );
+  }
+
+  // Initial check
+  handleScroll();
+
+  // Listen for scroll events
+  window.addEventListener("scroll", handleScroll);
+});

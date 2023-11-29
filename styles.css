@@ -193,3 +193,24 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
+h1{
+  text-align: center;
+}
+.sobre{
+  margin: 50px;
+  padding: 50px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.fade-in-text {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1 !important; /* Garante que a opacidade seja 1 após a animação */
+  animation: fadeIn 5s forwards; /* Adiciona forwards para manter o estado final da animação */
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
