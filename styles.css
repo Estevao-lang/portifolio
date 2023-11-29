@@ -118,3 +118,18 @@ nav{
       transform: translate(85px, 0%);
     }
   }
+
+.projetos{
+  background-color: black;
+  color:white;
+  
+
+  overflow: hidden;
+}
+.projetos h1 {
+  padding: 30px;
+  text-align: center;
+   margin: 20px;
+   font-weight: 700; 
+   font-size: xx-large;
+}
