@@ -86,7 +86,25 @@ justify-content: center;
   flex-direction: column-reverse;
   }
 }
+@media screen and (max-width: 1600px) {
+    
+  .img-banner{
+    display: flex;
+    justify-content:center ;
+    margin-bottom: -80px;
+    padding: 20px;
+  }
+  .banner{
+    display: flex;
+  
+  flex-direction: column-reverse;
+  }
+ .btn-button{
+  display: flex;
+  justify-content: center;
+ }
 
+}
 @media screen and (max-width: 600px) {
   
   .topnav.responsive {position: relative;}
