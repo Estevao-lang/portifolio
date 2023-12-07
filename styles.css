@@ -36,7 +36,13 @@ opacity: 0.5;
 display: flex;
 justify-content: center;
 }
-
+ .contatos ul, .servicos ul{
+  display: flex;
+  flex-direction: column;
+}
+.redes li a img{
+  width: 50px;
+}
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
@@ -69,6 +75,14 @@ justify-content: center;
   .topnav a.icon {
     float: right;
     display: block;
+  }
+  footer{
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .contatos{
+    margin-top: -50px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -294,8 +308,8 @@ h1{
   100% { opacity: 1; }
 }
 footer{
-  
-  height: 50vh;
+
+  height: 70vh;
   background-color: black;
   color: white;
   justify-content: space-between;
