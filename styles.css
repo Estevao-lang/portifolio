@@ -13,13 +13,14 @@ body{
     
     
 }
+
 .img-banner img{
    width: 40vw;
   
     
 }
-.txt-banner{
-    padding: 100px;
+.txt-banner p{
+    padding: 0 100px 0 100px
 }
 li{
     list-style: none;
@@ -28,6 +29,18 @@ li{
     margin: 20px;
     display: inline;
 
+}
+.aula {
+  background-image: url("./images/apontando.JPG");
+
+  /* Set a specific height */
+  min-height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 li:hover{
 opacity: 0.5;
@@ -77,6 +90,10 @@ justify-content: center;
     display: block;
   }
   footer{
+    flex-wrap: wrap;
+    display: flex;
+  }
+  footer{
     display: flex;
     flex-direction: column;
    
@@ -101,7 +118,7 @@ justify-content: center;
   }
 }
 @media screen and (max-width: 1600px) {
-    
+ 
   .img-banner{
     display: flex;
     justify-content:center ;
@@ -116,8 +133,27 @@ justify-content: center;
  .btn-button{
   display: flex;
   justify-content: center;
- }
 
+ }
+ button{
+width: 30vw;
+height: 10vh;
+font-size: large;
+
+ }
+ footer {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+ 
+ }
+.txt-banner{
+  padding: 20px 0px 0px 0px;
+  margin-top: 50px;
+}
+.sobre{
+  padding: 0%;
+}
 }
 @media screen and (max-width: 600px) {
   
@@ -290,8 +326,8 @@ h1{
 }
 .sobre{
  
-  margin: 50px;
-  padding: 50px;
+  margin: 30px;
+  padding: 25px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .fade-in-text {
@@ -327,6 +363,21 @@ justify-content: center;
 margin: 20px;
 
  
+}
+
+
+.contato h1 {
+  margin: 20px;
+}
+.contato{
+  text-align: center;
+  margin: 80px;
+  padding: 25px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.contato ul li a img{
+  width: 50px;
 }
  .perfil img{
   width: 10vw;
