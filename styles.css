@@ -20,7 +20,7 @@ body{
     
 }
 .txt-banner p{
-    padding: 0 10vw 0 8vw
+    padding: 0 10vw 0 10vw
 }
 li{
     list-style: none;
@@ -51,7 +51,7 @@ justify-content: center;
 }
  .contatos ul, .servicos ul{
   display: flex;
-  flex-direction: column;
+ flex-wrap: wrap;
 }
 .redes li a img{
   width: 50px;
@@ -89,6 +89,10 @@ justify-content: center;
     float: right;
     display: block;
   }
+.contato ul{
+  display: flex;
+  flex-wrap: wrap;
+}
   footer{
     flex-wrap: wrap;
     display: flex;
@@ -99,6 +103,7 @@ justify-content: center;
    
   }
   .contatos{
+    padding: 20em;
     margin-top: -50px;
   }
 }
