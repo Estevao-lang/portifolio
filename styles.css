@@ -171,6 +171,7 @@ font-size: large;
 }
 .btn-button button{
     padding: 15px;
+    width: 15em;
     margin-top: 20px;
     border-style: none;
     border-radius: 10px;
