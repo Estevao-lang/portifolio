@@ -31,17 +31,30 @@ li{
 
 }
 .aula {
+  background-color: black;
   background-image: url("./images/apontando.JPG");
-
-  /* Set a specific height */
-  min-height: 500px; 
-
-  /* Create the parallax scrolling effect */
+  height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/* Adapte as propriedades conforme necessário para diferentes tamanhos de tela */
+@media only screen and (max-width: 600px) {
+  .aula {
+    background-size: 100% 50%; /* Ajuste para cobrir toda a largura e altura */
+    height: 100vh !important; /* Necessário em alguns browsers */
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .aula {
+    background-size: cover;
+    min-height: 400px;
+  }
+}
+
 li:hover{
 opacity: 0.5;
 }
@@ -49,9 +62,11 @@ opacity: 0.5;
 display: flex;
 justify-content: center;
 }
- .contatos ul, .servicos ul{
+
+ .contato ul  {
+ justify-content: center;
   display: flex;
- flex-wrap: wrap;
+flex-wrap: wrap;
 }
 .redes li a img{
   width: 50px;
@@ -89,23 +104,14 @@ justify-content: center;
     float: right;
     display: block;
   }
-.contato ul{
-  display: flex;
-  flex-wrap: wrap;
-}
+
   footer{
     flex-wrap: wrap;
     display: flex;
-  }
-  footer{
-    display: flex;
     flex-direction: column;
-   
   }
-  .contatos{
-    padding: 20em;
-    margin-top: -50px;
-  }
+ 
+
 }
 @media screen and (max-width: 800px) {
  
@@ -148,8 +154,7 @@ font-size: large;
  }
  footer {
   font-size: large;
-  display: flex;
-  flex-direction: column;
+
  
  }
 .txt-banner{
@@ -173,6 +178,7 @@ font-size: large;
     display: block;
     text-align: left;
   }
+
 }
 .btn-button button{
     padding: 15px;
@@ -350,13 +356,11 @@ h1{
   100% { opacity: 1; }
 }
 footer{
-
+text-align: center;
   height: 70vh;
   background-color: black;
   color: white;
-  justify-content: space-between;
-  text-align: center;
-  display: flex;
+
  padding: 50px; 
   
 }
@@ -372,18 +376,18 @@ margin: 20px;
 }
 
 
-.contato h1 {
-  margin: 20px;
-}
-.contato{
-  text-align: center;
+
+.contato  {
+
   margin: 80px;
-  padding: 25px;
+padding:1rem ;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.contato ul li a img{
+.contato img{
+  
   width: 50px;
+  padding-top: 0.5em;
 }
  .perfil img{
   width: 10vw;
@@ -391,3 +395,27 @@ margin: 20px;
   border-radius: 100%;
 
  }
+ .contatos-footer ul {
+  display: flex;
+  flex-direction: column;
+ }
+ .redes{
+  display:  flex;
+  justify-content: space-around;
+  align-items: center;
+ }
+ .copy{
+
+  margin-top: 10rem;
+  text-align: center;
+
+ 
+ }
+ .copy a{
+	color: #fff;
+	font-size: 1rem;
+
+    text-decoration: none;
+    margin-left: 10px;
+    text-align: center;
+}
