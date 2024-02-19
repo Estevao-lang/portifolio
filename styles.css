@@ -340,7 +340,9 @@ footer {
     background-size: 100% 50%;
     height: 100vh !important;
   }
-
+.txt-banner{
+  margin-bottom: 5rem;
+}
   .topnav a:not(:first-child) {
     display: none;
   }
@@ -448,6 +450,7 @@ footer {
     background-size: 100% 50%;
     height: 100vh !important;
   }
+
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
