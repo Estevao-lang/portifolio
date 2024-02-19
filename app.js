@@ -60,3 +60,24 @@ function myFunction() {
   }
 
 }
+
+
+
+function setMode(darkMode) {
+  const body = document.body;
+  const lightModeImage = document.getElementById('light-mode-image');
+  const darkModeImage = document.getElementById('dark-mode-image');
+
+  body.classList.toggle('dark-mode', darkMode);
+
+  if (darkMode) {
+    // Mudar para modo escuro
+    lightModeImage.style.display = 'none';
+    darkModeImage.style.display = 'block';
+  } else {
+    // Mudar para modo claro
+    darkModeImage.style.display = 'none';
+    lightModeImage.style.display = 'block';
+  }
+}
+

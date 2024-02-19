@@ -10,6 +10,26 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+#light-mode-image {
+  display: block; /* Visível por padrão */
+}
+
+#dark-mode-image {
+  display: none; /* Invisível por padrão */
+}
+
+.dark-mode #light-mode-image {
+  display: none; /* Oculta no modo escuro */
+}
+
+.dark-mode #dark-mode-image {
+  display: block; /* Mostra no modo escuro */
+}
+
 .txt-banner{
   display: flex;
   justify-content: center;
