@@ -1,0 +1,150 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\b\i\f0\fs72\lang22 Jogo da forca\par
+\b0\fs28 (python)\par
+
+\pard\sa200\sl276\slmult1 Segue abaixo um os primeiros passos para o jogo da forca em python:\par
+\i0\fs22 1-Escolher uma palavra aleat\'f3ria:\par
+Para escolher uma palavra aleat\'f3ria do conjunto de palavras dispon\'edveis, podemos utilizar a biblioteca random do Python. Armazenamos todas as palavras poss\'edveis em uma lista e utilizamos a fun\'e7\'e3o random.choice() para selecionar uma palavra aleat\'f3ria dessa lista.\par
+\par
+2-Armazenar a palavra secreta:\par
+Podemos armazenar a palavra secreta em uma vari\'e1vel. Para isso, depois de escolher a palavra aleat\'f3ria, podemos definir a vari\'e1vel palavra_secreta para armazenar essa palavra.\par
+\par
+3-Exibir a palavra oculta e as letras corretamente adivinhadas:\par
+Podemos criar uma fun\'e7\'e3o que exiba a palavra oculta com tra\'e7os ou underscores (_) representando as letras n\'e3o adivinhadas. \'c0 medida que o jogador acerta letras, esses tra\'e7os ser\'e3o substitu\'eddos pelas letras corretas. Podemos utilizar la\'e7os de repeti\'e7\'e3o para percorrer cada letra da palavra e verificar se ela foi adivinhada corretamente.\par
+\par
+4-Receber a entrada do jogador:\par
+Podemos utilizar a fun\'e7\'e3o input() do Python para receber a entrada do jogador, isto \'e9, as letras que ele acredita que est\'e3o na palavra. Essas letras s\'e3o armazenadas em uma lista ou conjunto para evitar repeti\'e7\'f5es.\par
+\par
+5-Verificar a entrada do jogador:\par
+Devemos verificar se a letra inserida pelo jogador est\'e1 presente na palavra secreta. Se estiver, a letra \'e9 adicionada \'e0 lista de letras corretamente adivinhadas. Se n\'e3o estiver, o jogador perde uma tentativa.\par
+\par
+6-Controlar as tentativas:\par
+Podemos utilizar uma vari\'e1vel para acompanhar o n\'famero de tentativas restantes. A cada vez que o jogador inserir uma letra errada, subtra\'edmos 1 dessa vari\'e1vel. Quando o n\'famero de tentativas chegar a 0, o jogador perde o jogo.\par
+\par
+7-Exibir a forca:\par
+Podemos criar uma fun\'e7\'e3o que exiba a figura da forca, representando as tentativas perdidas pelo jogador. Cada vez que o jogador erra uma letra, uma parte do boneco \'e9 desenhada.\par
+\par
+8-Verificar a vit\'f3ria ou derrota:\par
+A cada tentativa, verificamos se o jogador adivinhou todas as letras corretas da palavra. Se todas as letras foram adivinhadas, o jogador vence. Se o n\'famero de tentativas chegar a 0 antes que todas as letras sejam adivinhadas, o jogador perde.\par
+\par
+9-Loop do jogo:\par
+O jogo deve ser executado em um loop at\'e9 que o jogador ven\'e7a ou perca. Ap\'f3s cada tentativa do jogador, verificamos a condi\'e7\'e3o de vit\'f3ria ou derrota. Se o jogo acabar, perguntamos ao jogador se ele deseja jogar novamente.\par
+
+\pard\sa200\sl276\slmult1\qc\b Codigo\par
+
+\pard\sa200\sl276\slmult1\b0 import random\par
+\par
+def escolher_palavra():\par
+    palavras = ["python", "programacao", "computador", "jogo", "algoritmo", "inteligencia"]\par
+    return random.choice(palavras)\par
+\par
+def mostrar_forca(palavra, letras_corretas):\par
+    for letra in palavra:\par
+        if letra in letras_corretas:\par
+            print(letra, end=" ")\par
+        else:\par
+            print("_", end=" ")\par
+    print()\par
+\par
+def jogar_forca():\par
+    palavra_secreta = escolher_palavra()\par
+    letras_corretas = []\par
+    tentativas = 6\par
+\par
+    print("Bem-vindo ao Jogo da Forca!")\par
+    mostrar_forca(palavra_secreta, letras_corretas)\par
+\par
+    while tentativas > 0:\par
+        letra = input("Digite uma letra: ")\par
+\par
+        if letra in letras_corretas:\par
+            print("Voc\'ea j\'e1 tentou essa letra.")\par
+        elif letra in palavra_secreta:\par
+            letras_corretas.append(letra)\par
+        else:\par
+            print("Letra errada!")\par
+            tentativas -= 1\par
+\par
+        mostrar_forca(palavra_secreta, letras_corretas)\par
+\par
+        if all(letra in letras_corretas for letra in palavra_secreta):\par
+            print("Parab\'e9ns! Voc\'ea acertou a palavra!")\par
+            break\par
+\par
+    if tentativas == 0:\par
+        print("Voc\'ea perdeu! A palavra secreta era:", palavra_secreta)\par
+\par
+if __name__ == "__main__":\par
+    jogar_forca()\par
+
+\pard\sa200\sl276\slmult1\qc\b Explica\'e7\'e3o do codigo\b0\par
+\par
+\par
+1. `import random`: Esta linha importa o m\'f3dulo `random`, que ser\'e1 usado para escolher uma palavra aleat\'f3ria da lista.\par
+\par
+2. `def escolher_palavra():`: Define uma fun\'e7\'e3o chamada `escolher_palavra()` que n\'e3o recebe argumentos. Essa fun\'e7\'e3o retorna uma palavra aleat\'f3ria escolhida da lista `palavras`.\par
+\par
+3. `palavras = ["python", "programacao", "computador", "jogo", "algoritmo", "inteligencia"]`: Uma lista de palavras \'e9 criada com algumas op\'e7\'f5es para o jogo da forca.\par
+\par
+4. `return random.choice(palavras)`: A fun\'e7\'e3o `escolher_palavra()` usa o `random.choice()` para retornar uma palavra aleat\'f3ria da lista `palavras`.\par
+\par
+5. `def mostrar_forca(palavra, letras_corretas):`: Define a fun\'e7\'e3o `mostrar_forca(palavra, letras_corretas)`, que recebe duas entradas: a palavra secreta (`palavra`) e uma lista de letras corretas j\'e1 informadas pelo jogador (`letras_corretas`).\par
+\par
+6. `for letra in palavra:`: O loop `for` \'e9 usado para iterar por cada letra na `palavra`.\par
+\par
+7. `if letra in letras_corretas:`: Verifica se a letra atual j\'e1 foi informada e est\'e1 presente na lista de `letras_corretas`.\par
+\par
+8. `print(letra, end=" ")`: Se a letra estiver correta, \'e9 mostrada na tela, seguida de um espa\'e7o. Caso contr\'e1rio, um `_` \'e9 mostrado no lugar da letra.\par
+\par
+9. `print()`: Imprime uma nova linha ap\'f3s mostrar todas as letras corretas ou "_".\par
+\par
+10. `def jogar_forca():`: Define a fun\'e7\'e3o `jogar_forca()` que n\'e3o recebe argumentos.\par
+\par
+11. `palavra_secreta = escolher_palavra()`: Chama a fun\'e7\'e3o `escolher_palavra()` para obter uma palavra aleat\'f3ria e armazena em `palavra_secreta`.\par
+\par
+12. `letras_corretas = []`: Inicializa uma lista vazia para armazenar as letras corretas informadas pelo jogador.\par
+\par
+13. `tentativas = 6`: Inicializa o n\'famero de tentativas dispon\'edveis para o jogador.\par
+\par
+14. `print("Bem-vindo ao Jogo da Forca!")`: Imprime uma mensagem de boas-vindas.\par
+\par
+15. `mostrar_forca(palavra_secreta, letras_corretas)`: Chama a fun\'e7\'e3o `mostrar_forca()` para mostrar o estado atual da palavra, com as letras corretas adivinhadas e os espa\'e7os para as letras ainda n\'e3o adivinhadas.\par
+\par
+16. `while tentativas > 0:`: Entra em um loop que continuar\'e1 at\'e9 que o n\'famero de `tentativas` seja igual a zero.\par
+\par
+17. `letra = input("Digite uma letra: ")`: Solicita ao jogador que digite uma letra.\par
+\par
+18. `if letra in letras_corretas:`: Verifica se a letra j\'e1 foi tentada anteriormente e est\'e1 na lista de `letras_corretas`.\par
+\par
+19. `print("Voc\'ea j\'e1 tentou essa letra.")`: Se a letra j\'e1 tiver sido tentada, imprime uma mensagem informando que ela j\'e1 foi usada.\par
+\par
+20. `elif letra in palavra_secreta:`: Verifica se a letra est\'e1 na `palavra_secreta`.\par
+\par
+21. `letras_corretas.append(letra)`: Se a letra estiver correta e n\'e3o tiver sido tentada antes, ela \'e9 adicionada \'e0 lista de `letras_corretas`.\par
+\par
+22. `else:`: Se a letra n\'e3o estiver correta e n\'e3o tiver sido tentada antes, ela \'e9 considerada uma tentativa inv\'e1lida.\par
+\par
+23. `print("Letra errada!")`: Imprime uma mensagem informando que a letra \'e9 incorreta.\par
+\par
+24. `tentativas -= 1`: Diminui o n\'famero de `tentativas` em 1, pois uma tentativa foi usada.\par
+\par
+25. `mostrar_forca(palavra_secreta, letras_corretas)`: Chama a fun\'e7\'e3o `mostrar_forca()` novamente para atualizar o estado da palavra com as letras corretas adivinhadas e os espa\'e7os para as letras n\'e3o adivinhadas.\par
+\par
+26. `if all(letra in letras_corretas for letra in palavra_secreta):`: Verifica se todas as letras da `palavra_secreta` est\'e3o na lista `letras_corretas`, o que significa que o jogador adivinhou corretamente todas as letras.\par
+\par
+27. `print("Parab\'e9ns! Voc\'ea acertou a palavra!")`: Se todas as letras foram adivinhadas corretamente, o jogador venceu o jogo e uma mensagem de parab\'e9ns \'e9 exibida.\par
+\par
+28. `break`: Encerra o loop while, pois o jogador j\'e1 venceu o jogo.\par
+\par
+29. `if tentativas == 0:`: Se o loop while terminar e o jogador n\'e3o tiver vencido, verifica se o n\'famero de `tentativas` chegou a zero.\par
+\par
+30. `print("Voc\'ea perdeu! A palavra secreta era:", palavra_secreta)`: Se o jogador esgotar todas as tentativas, imprime uma mensagem de derrota e mostra a `palavra_secreta`.\par
+\par
+31. `if __name__ == "__main__":`: Verifica se o c\'f3digo est\'e1 sendo executado diretamente (n\'e3o sendo importado como um m\'f3dulo).\par
+\par
+32. `jogar_forca()`: Chama a fun\'e7\'e3o `jogar_forca()` para iniciar o jogo da forca.\par
+\par
+Esse c\'f3digo implementa o cl\'e1ssico jogo da forca em que o jogador deve adivinhar uma palavra secreta. O jogador pode digitar uma letra por vez e tem um n\'famero limitado de tentativas para acertar a palavra. A cada tentativa incorreta, uma parte do desenho da forca \'e9 montada, e o jogo continua at\'e9 que o jogador adivinhe corretamente a palavra ou esgote todas as tentativas.\par
+}
+ 
