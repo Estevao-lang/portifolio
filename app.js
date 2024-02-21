@@ -81,3 +81,6 @@ function setMode(darkMode) {
   }
 }
 
+window.addEventListener('load', function () {
+  document.body.classList.add('loaded');
+});
