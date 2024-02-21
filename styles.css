@@ -42,6 +42,7 @@ body.dark-mode {
   display: flex;
   justify-content: center;
   margin-bottom: 300px;
+  border-bottom: #bbb 1px solid;
 }
 nav{ 
    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3); 
