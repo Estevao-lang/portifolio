@@ -86,9 +86,9 @@ hr{
 }
 
 .aula {
-  background-color: rgb(255, 255, 255);
+
   background-image: url("./images/apontando.JPG");
-  height: 100vh;
+  height: 300px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -504,7 +504,7 @@ footer {
 /* Adapte as propriedades conforme necessário para diferentes tamanhos de tela */
 @media screen and (max-width: 600px) {
   .aula {
-    background-size: 100% 50%;
+    background-size: 100% 100%;
     height: 100vh !important;
   }
 
