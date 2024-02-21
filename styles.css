@@ -50,7 +50,7 @@ body.loaded #dark-mode-image {
 .banner {
   display: flex;
   justify-content: center;
-  margin-bottom: 300px;
+
 
 }
 .card img{
@@ -566,7 +566,11 @@ footer {
  
 }
 .banner{
-margin-bottom: -0px;
+margin-bottom: -20px;
+display: flex;
+justify-content: center;
+align-items: center;
+
 }
   /* Adicione mais ajustes conforme necessário */
 }
